@@ -11,8 +11,6 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
     background-color: #1d1d1d;
     color: #ffffff;
 }
@@ -25,31 +23,81 @@ body {
 .navBar {
     width: 100%;
     position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
     background-color: #181818;
+}
+
+.searchBar {
+    width: 250px;
+    height: 40px;
+    display: flex;
+    border-radius: 20px;
+    background-color: #1d1d1d;
+}
+
+#searchInput {
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+    padding-left: 10px;
+    border: 2px solid #1d1d1d;
+    background-color: #3a3a3a;
+    color: #ffffff;
+
+}
+
+#searchButton {
+    border-radius: 0 20px 20px 0;
+    border: 2px solid #1d1d1d;
+    padding: 0 8px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1.2em;
 }
 
 .videoGrid {
     width: 100%;
     height: 85%;
-}
-
-.pagination {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #181818;
-    height: 8%;
     display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 10px;
-    padding-right: 20px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 50px;
 }
 
-.pagination button {
-    padding: 8px 15px;
-    cursor: pointer;
+.videoDiv {
+    width: 350px;
+    height: fit-content;
+    background-color: #424040;
+    border-radius: 10px;
 }
+
+.videoDiv a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#videoThumbnail {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px 10px 0 0;
+}
+
+.videoInfo {
+    padding: 0 0 10px 20px;
+    height: fit-content;
+}
+
+#videoTitle {
+    max-width: 100%;
+    height: fit-content;
+    /* height: 25px; */
+    font-size: 1.3em;
+    /* overflow: hidden; */
+}
+
