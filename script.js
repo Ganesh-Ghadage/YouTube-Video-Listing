@@ -69,10 +69,12 @@ function displayVideos(videoArr) {
   
     videoDiv.innerHTML = `
           <a href="https://www.youtube.com/watch?v=${video.items.id}" target="_blank">
-              <img id="videoThumbnail" src="${video.items.snippet.thumbnails.standard.url}" alt="${video.items.snippet.title} thumbnail">
+              <div class="img-hover-zoom">
+                <img id="videoThumbnail" src="${video.items.snippet.thumbnails.standard.url}" alt="${video.items.snippet.title} thumbnail">
+              </div>
               <div class="videoInfo">
-                  <p id="videoTitle">${video.items.snippet.title}</p>
-                  <p id="videoChannel">${video.items.snippet.channelTitle}</p>
+                <p id="videoTitle">${video.items.snippet.title}</p>
+                <p id="videoChannel">${video.items.snippet.channelTitle}</p>
               </div>
           </a>`
 
