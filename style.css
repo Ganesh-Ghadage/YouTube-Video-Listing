@@ -46,7 +46,7 @@ body {
     border: 2px solid #1d1d1d;
     background-color: #3a3a3a;
     color: #ffffff;
-
+    font-size: 1em;
 }
 
 #searchButton {
@@ -68,7 +68,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .videoDiv {
@@ -117,7 +117,7 @@ body {
 
 @media screen and (max-width: 480px) {
     body {
-      width: 100dvw;
+      width: 95dvw;
     }
     
     .navBar {
