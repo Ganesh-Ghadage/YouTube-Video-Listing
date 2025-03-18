@@ -14,6 +14,7 @@ YouTube-style video listing page
 - A search bar to filter videos based on tags (filteration is done on frontend without any additional api calls)
 - Implemented a grid layout for better UI
 - Load More button to load additional videos
+- responsive design
 
 ## Screenshots
 ![Home Page](image.png)
