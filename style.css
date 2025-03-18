@@ -64,6 +64,7 @@ body {
     height: 85%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
@@ -101,11 +102,40 @@ body {
     /* overflow: hidden; */
 }
 
+.buttonDiv {
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+}
+
 #loadMoreButton {
-    position: relative;
-    left: 90%;
     margin-bottom: 20px;
     text-align: end;
     padding: 8px 15px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+      width: 100dvw;
+    }
+    
+    .navBar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .navBar h1 {
+        font-size: 1.7em;
+    }
+
+    .videoGrid {
+        margin-bottom: 10px;
+    }
+
+    .videoDiv {
+        width: 100%;
+    }
+
 }

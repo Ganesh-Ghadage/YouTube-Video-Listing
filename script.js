@@ -22,17 +22,16 @@ async function fetchAndUseVideos(page) {
 
   videoData.forEach(video => {
     const videoDiv = document.createElement('div')
+    videoDiv.classList.add('videoDiv')
   
     videoDiv.innerHTML = `
-      <div class="videoDiv">
           <a href="https://www.youtube.com/watch?v=${video.items.id}" target="_blank">
               <img id="videoThumbnail" src="${video.items.snippet.thumbnails.standard.url}" alt="${video.items.snippet.title} thumbnail">
               <div class="videoInfo">
                   <p id="videoTitle">${video.items.snippet.title}</p>
                   <p id="videoChannel">${video.items.snippet.channelTitle}</p>
               </div>
-          </a>
-      </div>`
+          </a>`
 
     videoGrid.appendChild(videoDiv)
     
