@@ -24,6 +24,7 @@ const videoGrid = document.querySelector('.videoGrid')
 const loadMoreButton = document.getElementById('loadMoreButton')
 const searchInput = document.getElementById('searchInput')
 const searchButton = document.getElementById('searchButton')
+const resultTextDisplay = document.getElementById('resultText')
 
 // function to get data from fetchVideos() and displaying it on page
 // As we can't use the await at global level this function will do all job for us
@@ -33,9 +34,18 @@ async function fetchAndUseVideos(page = 1, searchQuery = '') {
 
   // if search query is then only we fetch the data from FreeAPI YouTube endpoint
   if(!searchQuery) {
-    const newVideos = await fetchVideos(page);
-    videoData.push(...newVideos)
-    console.log(videoData)
+    // clear the search bar
+    searchButton.innerText = '🔍'
+    searchInput.value = ''
+    resultTextDisplay.textContent = `Showing Trendig results`
+
+    // fetch new videos based on page number
+    if(page === 1) {
+      videoData = await fetchVideos(page)
+    }else if(page > 1){
+      const newVideos = await fetchVideos(page);
+      videoData.push(...newVideos)
+    }
     displayVideos(videoData)
   }
   
@@ -52,8 +62,10 @@ async function fetchAndUseVideos(page = 1, searchQuery = '') {
       })
     })
 
+    // change search option to clear search option
+    resultTextDisplay.textContent = `Showing result for ${searchQuery}`
+    searchButton.innerText = '❌'
     displayVideos(searchResult)
-    searchInput.value = ''
   }
 
 }
@@ -82,6 +94,18 @@ function displayVideos(videoArr) {
   });
 }
 
+// search and clear search functionality
+function handleSearch() {
+  
+    if(searchButton.innerText === '❌'){
+      fetchAndUseVideos()
+    }else {
+      if(searchInput.value.trim()){
+        fetchAndUseVideos(page, searchInput.value.trim())
+      }
+    }
+}
+
 // event listener for loadMore button and search button
 loadMoreButton.addEventListener('click', () => fetchAndUseVideos(page++))
-searchButton.addEventListener('click', () => fetchAndUseVideos(page, searchInput.value.trim()))
+searchButton.addEventListener('click', handleSearch)

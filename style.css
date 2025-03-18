@@ -29,6 +29,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: #181818;
+    z-index: 10;
 }
 
 .searchBar {
@@ -67,8 +68,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
-    margin-bottom: 10px;
+    padding: 10px 20px 20px 20px;
 }
 
 .videoDiv {
@@ -135,6 +135,11 @@ body {
     cursor: pointer;
 }
 
+#resultText {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 @media screen and (max-width: 480px) {
     body {
       width: 95dvw;
@@ -148,10 +153,6 @@ body {
 
     .navBar h1 {
         font-size: 1.7em;
-    }
-
-    .videoGrid {
-        margin-bottom: 10px;
     }
 
     .videoDiv {
