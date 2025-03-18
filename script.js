@@ -15,7 +15,7 @@ async function fetchVideos(page = 1) {
 let videoData;
 let page = 1;
 const videoGrid = document.querySelector('.videoGrid')
-
+const loadMoreButton = document.getElementById('loadMoreButton')
 
 async function fetchAndUseVideos(page) {
   videoData = await fetchVideos(page);
@@ -42,4 +42,4 @@ async function fetchAndUseVideos(page) {
 
 fetchAndUseVideos(page++);
 
-
+loadMoreButton.addEventListener('click', () => fetchAndUseVideos(page++))

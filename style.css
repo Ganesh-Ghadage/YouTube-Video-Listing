@@ -101,3 +101,11 @@ body {
     /* overflow: hidden; */
 }
 
+#loadMoreButton {
+    position: relative;
+    left: 90%;
+    margin-bottom: 20px;
+    text-align: end;
+    padding: 8px 15px;
+    cursor: pointer;
+}
